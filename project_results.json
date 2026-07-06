@@ -1,0 +1,300 @@
+{
+  "central": [
+    {
+      "year": 2015,
+      "mean": 5.376,
+      "median": 5.232,
+      "std": 1.145,
+      "min": 2.839,
+      "max": 7.587
+    },
+    {
+      "year": 2016,
+      "mean": 5.382,
+      "median": 5.314,
+      "std": 1.142,
+      "min": 2.905,
+      "max": 7.526
+    },
+    {
+      "year": 2017,
+      "mean": 5.354,
+      "median": 5.279,
+      "std": 1.131,
+      "min": 2.693,
+      "max": 7.537
+    },
+    {
+      "year": 2018,
+      "mean": 5.376,
+      "median": 5.378,
+      "std": 1.12,
+      "min": 2.905,
+      "max": 7.632
+    },
+    {
+      "year": 2019,
+      "mean": 5.407,
+      "median": 5.38,
+      "std": 1.113,
+      "min": 2.853,
+      "max": 7.769
+    }
+  ],
+  "modeling_note": "The main ML section is an index-replication experiment because WHR component variables are part of the official score construction.",
+  "model_results": [
+    {
+      "model": "Linear Regression",
+      "RMSE": 0.55,
+      "MAE": 0.424,
+      "R2": 0.754,
+      "Spearman_rank": 0.891,
+      "MeanRankErr": 15.705,
+      "Top10Overlap": 6,
+      "CV_RMSE_mean": 0.554,
+      "CV_RMSE_std": 0.033
+    },
+    {
+      "model": "Random Forest",
+      "RMSE": 0.626,
+      "MAE": 0.492,
+      "R2": 0.681,
+      "Spearman_rank": 0.86,
+      "MeanRankErr": 18.513,
+      "Top10Overlap": 2,
+      "CV_RMSE_mean": 0.487,
+      "CV_RMSE_std": 0.01
+    },
+    {
+      "model": "Gradient Boosting",
+      "RMSE": 0.69,
+      "MAE": 0.532,
+      "R2": 0.614,
+      "Spearman_rank": 0.823,
+      "MeanRankErr": 21.372,
+      "Top10Overlap": 0,
+      "CV_RMSE_mean": 0.504,
+      "CV_RMSE_std": 0.022
+    }
+  ],
+  "index_replication_results": [
+    {
+      "model": "Linear Regression",
+      "RMSE": 0.55,
+      "MAE": 0.424,
+      "R2": 0.754,
+      "Spearman_rank": 0.891,
+      "MeanRankErr": 15.705,
+      "Top10Overlap": 6,
+      "CV_RMSE_mean": 0.554,
+      "CV_RMSE_std": 0.033
+    },
+    {
+      "model": "Random Forest",
+      "RMSE": 0.626,
+      "MAE": 0.492,
+      "R2": 0.681,
+      "Spearman_rank": 0.86,
+      "MeanRankErr": 18.513,
+      "Top10Overlap": 2,
+      "CV_RMSE_mean": 0.487,
+      "CV_RMSE_std": 0.01
+    },
+    {
+      "model": "Gradient Boosting",
+      "RMSE": 0.69,
+      "MAE": 0.532,
+      "R2": 0.614,
+      "Spearman_rank": 0.823,
+      "MeanRankErr": 21.372,
+      "Top10Overlap": 0,
+      "CV_RMSE_mean": 0.504,
+      "CV_RMSE_std": 0.022
+    }
+  ],
+  "best_replication_model": "Linear Regression",
+  "replication_weights": {
+    "gdp": 0.34,
+    "social_support": 0.16,
+    "health": 0.211,
+    "freedom": 0.165,
+    "generosity": 0.052,
+    "corruption": 0.072
+  },
+  "custom_spearman": 0.8877400388803717,
+  "forecasting_note": "The lagged forecast uses only information available before the target year.",
+  "forecast_results": [
+    {
+      "model": "Lagged Random Forest",
+      "RMSE": 0.196,
+      "MAE": 0.136,
+      "R2": 0.969,
+      "Spearman_rank": 0.984,
+      "MeanRankErr": 5.542,
+      "Top10Overlap": 9
+    },
+    {
+      "model": "Last observed score",
+      "RMSE": 0.204,
+      "MAE": 0.135,
+      "R2": 0.967,
+      "Spearman_rank": 0.983,
+      "MeanRankErr": 5.817,
+      "Top10Overlap": 9
+    },
+    {
+      "model": "Lagged Linear Regression",
+      "RMSE": 0.238,
+      "MAE": 0.166,
+      "R2": 0.955,
+      "Spearman_rank": 0.979,
+      "MeanRankErr": 6.288,
+      "Top10Overlap": 9
+    }
+  ],
+  "best_forecast_model": "Lagged Random Forest",
+  "top_stable": [
+    {
+      "country": "New Zealand",
+      "rank_std": 0.45,
+      "rank_2015": 9,
+      "rank_2019": 8,
+      "improved_by": 1
+    },
+    {
+      "country": "Australia",
+      "rank_std": 0.71,
+      "rank_2015": 10,
+      "rank_2019": 11,
+      "improved_by": -1
+    },
+    {
+      "country": "Netherlands",
+      "rank_std": 0.84,
+      "rank_2015": 7,
+      "rank_2019": 5,
+      "improved_by": 2
+    },
+    {
+      "country": "Denmark",
+      "rank_std": 0.84,
+      "rank_2015": 3,
+      "rank_2019": 2,
+      "improved_by": 1
+    },
+    {
+      "country": "Iceland",
+      "rank_std": 0.84,
+      "rank_2015": 2,
+      "rank_2019": 4,
+      "improved_by": -2
+    },
+    {
+      "country": "Costa Rica",
+      "rank_std": 0.89,
+      "rank_2015": 12,
+      "rank_2019": 12,
+      "improved_by": 0
+    },
+    {
+      "country": "Belgium",
+      "rank_std": 1.14,
+      "rank_2015": 19,
+      "rank_2019": 18,
+      "improved_by": 1
+    },
+    {
+      "country": "Sweden",
+      "rank_std": 1.14,
+      "rank_2015": 8,
+      "rank_2019": 7,
+      "improved_by": 1
+    },
+    {
+      "country": "Rwanda",
+      "rank_std": 1.22,
+      "rank_2015": 154,
+      "rank_2019": 152,
+      "improved_by": 2
+    },
+    {
+      "country": "Austria",
+      "rank_std": 1.22,
+      "rank_2015": 13,
+      "rank_2019": 10,
+      "improved_by": 3
+    }
+  ],
+  "top_improved": [
+    {
+      "country": "Benin",
+      "rank_std": 21.44,
+      "rank_2015": 155,
+      "rank_2019": 102,
+      "improved_by": 53
+    },
+    {
+      "country": "Ivory Coast",
+      "rank_std": 21.68,
+      "rank_2015": 151,
+      "rank_2019": 99,
+      "improved_by": 52
+    },
+    {
+      "country": "Honduras",
+      "rank_std": 20.22,
+      "rank_2015": 105,
+      "rank_2019": 59,
+      "improved_by": 46
+    },
+    {
+      "country": "Hungary",
+      "rank_std": 17.08,
+      "rank_2015": 104,
+      "rank_2019": 62,
+      "improved_by": 42
+    },
+    {
+      "country": "Gabon",
+      "rank_std": 17.84,
+      "rank_2015": 143,
+      "rank_2019": 104,
+      "improved_by": 39
+    },
+    {
+      "country": "Romania",
+      "rank_std": 15.61,
+      "rank_2015": 86,
+      "rank_2019": 48,
+      "improved_by": 38
+    },
+    {
+      "country": "Bulgaria",
+      "rank_std": 17.22,
+      "rank_2015": 134,
+      "rank_2019": 97,
+      "improved_by": 37
+    },
+    {
+      "country": "Cameroon",
+      "rank_std": 14.75,
+      "rank_2015": 133,
+      "rank_2019": 96,
+      "improved_by": 37
+    },
+    {
+      "country": "Burkina Faso",
+      "rank_std": 15.6,
+      "rank_2015": 152,
+      "rank_2019": 115,
+      "improved_by": 37
+    },
+    {
+      "country": "Latvia",
+      "rank_std": 15.66,
+      "rank_2015": 89,
+      "rank_2019": 53,
+      "improved_by": 36
+    }
+  ]
+}
